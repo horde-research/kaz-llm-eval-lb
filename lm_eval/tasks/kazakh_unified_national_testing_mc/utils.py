@@ -5,7 +5,7 @@ import random
 
 def process_docs(dataset: Dataset):
     def _helper(doc,index):
-        field = doc['Correct Answer']
+        field = doc['correct_answer']
         fi = None
         if field == 'answerA' or field in ['A','А']:
             fi = "A"
