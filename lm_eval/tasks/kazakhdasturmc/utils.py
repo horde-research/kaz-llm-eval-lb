@@ -49,7 +49,7 @@ def process_docs(dataset: Dataset):
 
         random.shuffle(doc["choices"])
         gold = fi
-        shuffled_label = doc["choices"].index(doc[f"answer{gold}"])
+        shuffled_label = doc["choices"].index(doc[f"Option {gold}"])
         doc["label"] = inv_label_map[shuffled_label]
         doc["gold"] = inv_label_map[shuffled_label]
 
