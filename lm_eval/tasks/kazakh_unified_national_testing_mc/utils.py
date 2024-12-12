@@ -16,7 +16,7 @@ def process_docs(dataset: Dataset):
         if field == 'answerD' or field in ['D','Д']:
             fi = "D"
         if fi:
-            doc["choices"] = [doc[f"Option {s}"] for s in list('ABCD')]
+            doc["choices"] = [doc[f"{s}"] for s in list('ABCD')]
 
         else:
             for idx,(key,val) in enumerate(list(doc.items())[1:-1]):
@@ -24,22 +24,22 @@ def process_docs(dataset: Dataset):
                     fi = {0:"A",1:"B",2:"C",3:"D"}.get(idx)
 
 
-        doc["choices"] = [doc[f"Option {s}"] for s in list('ABCD')]
+        doc["choices"] = [doc[f"{s}"] for s in list('ABCD')]
         if index == 0:
             next_doc1 = dataset[index + 1]
             next_doc2 = dataset[index + 2] if index + 2 < len(dataset) else None
-            doc["choices"].extend([next_doc1[f"Option {s}"] for s in list('ABCD')])
-            doc["choices"].extend([next_doc2[f"Option {s}"] for s in list('ABCD')])
+            doc["choices"].extend([next_doc1[f"{s}"] for s in list('ABCD')])
+            doc["choices"].extend([next_doc2[f"{s}"] for s in list('ABCD')])
         elif index == len(dataset) - 1:
             prev_doc1 = dataset[index - 1]
             prev_doc2 = dataset[index - 2]
-            doc["choices"].extend([prev_doc1[f"Option {s}"] for s in list('ABCD')])
-            doc["choices"].extend([prev_doc2[f"Option {s}"] for s in list('ABCD')])
+            doc["choices"].extend([prev_doc1[f"{s}"] for s in list('ABCD')])
+            doc["choices"].extend([prev_doc2[f"{s}"] for s in list('ABCD')])
         else:
             prev_doc = dataset[index - 1]
             next_doc = dataset[index + 1]
-            doc["choices"].extend([prev_doc[f"Option {s}"] for s in list('ABCD')])
-            doc["choices"].extend([next_doc[f"Option {s}"] for s in list('ABCD')])
+            doc["choices"].extend([prev_doc[f"{s}"] for s in list('ABCD')])
+            doc["choices"].extend([next_doc[f"{s}"] for s in list('ABCD')])
 
         label_map = {label: i for i, label in enumerate(string.ascii_uppercase[:12])}
         inv_label_map = {i: label for i, label in enumerate(string.ascii_uppercase[:12])}
@@ -49,7 +49,7 @@ def process_docs(dataset: Dataset):
 
         random.shuffle(doc["choices"])
         gold = fi
-        shuffled_label = doc["choices"].index(doc[f"Option {gold}"])
+        shuffled_label = doc["choices"].index(doc[f"{gold}"])
         doc["label"] = inv_label_map[shuffled_label]
         doc["gold"] = inv_label_map[shuffled_label]
 
