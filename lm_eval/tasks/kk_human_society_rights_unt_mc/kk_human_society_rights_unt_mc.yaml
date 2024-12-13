@@ -1,4 +1,4 @@
-task: kazakh_human_society_rights_unt_mc
+task: kk_human_society_rights_unt_mc
 dataset_path: kz-transformers/kazakh-unified-national-testing-mc
 output_type: multiple_choice
 training_split: human_society_rights

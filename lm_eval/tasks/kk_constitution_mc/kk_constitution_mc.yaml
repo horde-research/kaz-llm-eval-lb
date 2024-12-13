@@ -1,4 +1,4 @@
-task: kazakh_gsm8k_kk_translated
+task: kk_constitution_mc
 dataset_path: kz-transformers/kazakh-constitution-mc
 output_type: multiple_choice
 training_split: test

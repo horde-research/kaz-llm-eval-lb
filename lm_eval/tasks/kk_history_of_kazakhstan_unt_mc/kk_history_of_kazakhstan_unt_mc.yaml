@@ -1,4 +1,4 @@
-task: kazakh_history_of_kazakhstan_unt_mc
+task: kk_history_of_kazakhstan_unt_mc
 dataset_path: kz-transformers/kazakh-unified-national-testing-mc
 output_type: multiple_choice
 training_split: history_of_kazakhstan
