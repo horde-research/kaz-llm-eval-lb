@@ -4,10 +4,8 @@ output_type: multiple_choice
 training_split: validation
 process_docs: !function utils.process_docs
 validation_split: validation
-doc_to_text: "{{Question}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}\nE. {{choices[4]}}\nF. {{choices[5]}}\nG. {{choices[6]}}\nH. {{choices[7]}}\nI. {{choices[8]}}\nJ. {{choices[9]}}\nK. {{choices[10]}}\nL. {{choices[11]}}\nОтвет:"
+doc_to_text: "Сіз қазақ тілінде жауап беретін білімді, пайдалы көмекшісіз. Қазақстан мәдениеті, ғылым, тарих және басқа да салалар бойынша көптаңдаулы сұрақтарға жауап беріңіз. Сұрақты және берілген жауап нұсқаларын мұқият оқып, ең дұрысын бір ғана әріппен (A, B, C, т.б.) белгілеңіз.{{Question}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}\nE. {{choices[4]}}\nF. {{choices[5]}}\nG. {{choices[6]}}\nH. {{choices[7]}}\nI. {{choices[8]}}\nJ. {{choices[9]}}\nK. {{choices[10]}}\nL. {{choices[11]}}\nЖауап:"
 doc_to_target: label
 doc_to_choice: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"]
 metric_list:
   - metric: acc
-
-mmlu_translated_kk,kazakh_and_literature_unt_m,kk_biology_unt_mc,kk_constitution_mc,kk_dastur_mc,kk_english_unt_mc,kk_geography_unt_mc,kk_gsm8k_translated,kk_history_of_kazakhstan_unt_mc,kk_human_society_rights_unt_mc,kk_world_history_unt_mc
